@@ -1,0 +1,57 @@
+## Ignore Visual Studio temporary files
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build folders
+[Bb]in/
+[Oo]bj/
+
+## Logs
+*.log
+
+## NuGet packages
+*.nupkg
+*.snupkg
+packages/
+
+## Visual Studio Code
+.vscode/
+
+## Rider
+.idea/
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Test Results
+TestResults/
+
+## Publish output
+publish/
+*.publishsettings
+
+## Resharper
+_ReSharper*/
+*.DotSettings.user
+
+## Azure publish settings
+*.azurePubxml
+
+## Entity Framework
+*.edmx.diagram
+
+## Temporary files
+*.tmp
+*.temp
+*.cache
+
+## Backup files
+*.bak
+*.backup
+
+## Database files
+*.dbmdl
