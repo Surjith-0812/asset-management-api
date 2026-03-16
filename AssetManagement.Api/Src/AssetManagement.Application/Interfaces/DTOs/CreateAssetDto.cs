@@ -1,21 +1,14 @@
 ﻿using AssetManagement.Domain.Enums;
-using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AssetManagement.Domain.Entities
+namespace AssetManagement.Application.Interfaces.DTOs
 {
-    public class Asset
+    public class CreateAssetDto
     {
-        public Asset()
-        {
-            CreatedDate = DateTime.UtcNow;
-            AssertStatus = AssertStatus.Available;
-        }
-
         public Guid Id { get; set; }
 
         public required string Name { get; set; }
@@ -34,14 +27,6 @@ namespace AssetManagement.Domain.Entities
 
         public string? Location { get; set; }
 
-        public DateTime CreatedDate { private get; set; }
-
-        public DateTime? UpdatedDate { get; set; }
-
-        public AssertStatus AssertStatus { get; set; }
-
         public string? Notes { get; set; }
-
-        public ICollection<AssetAssignment> Assignments { get; set; } = [];
     }
 }
