@@ -24,9 +24,9 @@ namespace AssetManagement.Api
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<AssetDto>> GetAsset(Guid assestId)
+        public async Task<ActionResult<AssetDto>> GetAsset(Guid id)
         {
-            var results = await _assetService.GetAssetByIdAsync(assestId);
+            var results = await _assetService.GetAssetByIdAsync(id);
             if (results is null)
                 return NotFound();
             return Ok(results);

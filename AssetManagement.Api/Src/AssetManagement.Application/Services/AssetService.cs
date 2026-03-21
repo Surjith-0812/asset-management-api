@@ -34,7 +34,7 @@ namespace AssetManagement.Application.Services
         public async Task<AssetDto?> DeleteAsset(Guid id)
         {
             var deleteResult = await _assetRepository.DeleteAsset(id);
-            if (deleteResult != null) { return null; }
+            if (deleteResult == null) { return null; }
 
             return _automapper.Map<AssetDto>(deleteResult);
         }

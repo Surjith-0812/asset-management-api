@@ -17,6 +17,9 @@ namespace AssetManagement.Application.Mappings
 
             CreateMap<Asset, AssetDto>();
 
+            CreateMap<AssetDto, Asset>();
+
+
         }
     }
 }
