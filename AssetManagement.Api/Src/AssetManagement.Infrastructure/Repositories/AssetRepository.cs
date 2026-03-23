@@ -31,7 +31,6 @@ namespace AssetManagement.Infrastructure.Repositories
 
             _context.Assets.Remove(asset);
             await _context.SaveChangesAsync();
-
             return asset;
         }
 

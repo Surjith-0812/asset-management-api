@@ -34,7 +34,7 @@ namespace AssetManagement.Domain.Entities
 
         public string? Location { get; set; }
 
-        public DateTime CreatedDate { private get; set; }
+        public DateTime CreatedDate { get; private set; }
 
         public DateTime? UpdatedDate { get; set; }
 
