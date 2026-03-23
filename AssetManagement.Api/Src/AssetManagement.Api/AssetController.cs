@@ -17,7 +17,7 @@ namespace AssetManagement.Api
         }
 
         [HttpGet]
-        public async Task<ActionResult<AssetDto>> GetAllAssets()
+        public async Task<ActionResult<IEnumerable<AssetDto>>> GetAllAssets()
         {
             var results = await _assetService.GetAssetsAsync();
             return Ok(results);
@@ -38,14 +38,13 @@ namespace AssetManagement.Api
             var asset = await _assetService.CreateAssetAsync(addDto);
             return CreatedAtAction("GetAsset", new { id = asset.Id }, asset);
         }
-        
+
         [HttpDelete("{id}")]
         public async Task<ActionResult<AssetDto>> DeleteAsset(Guid id)
         {
             var asset = await _assetService.DeleteAsset(id);
             if (asset == null) return NotFound();
             return Ok(asset);
-
         }
     }
 }
