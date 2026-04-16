@@ -8,7 +8,7 @@ namespace AssetManagement.Domain.Entities
 {
     public class AssetAssignment
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
 
         public Guid AssetId { get; set; }
 

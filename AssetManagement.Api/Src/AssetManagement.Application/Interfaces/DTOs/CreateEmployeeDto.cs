@@ -9,7 +9,6 @@ namespace AssetManagement.Application.Interfaces.DTOs
 {
     public class CreateEmployeeDto
     {
-        public Guid Id { get; set; }
 
         public required string EmployeeCode { get; set; }
 

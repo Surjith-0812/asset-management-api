@@ -9,8 +9,6 @@ namespace AssetManagement.Application.Interfaces.DTOs
 {
     public class CreateAssetDto
     {
-        public Guid Id { get; set; }
-
         public required string Name { get; set; }
 
         public required string SerialNumber { get; set; }
