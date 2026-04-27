@@ -1,11 +1,8 @@
 ﻿using AssetManagement.Application.Interfaces.DTOs;
 using AssetManagement.Application.Interfaces.Services;
-using AssetManagement.Domain.Entities;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AssetManagement.Api
+namespace AssetManagement.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -39,7 +36,7 @@ namespace AssetManagement.Api
             var result = await _service.AssignAssetAsync(dto);
             return CreatedAtAction("GetAssignmentById", new { id = result.Id }, result);
         }
-       
+
         [HttpPost("{id}/return")]
         public async Task<ActionResult<AssetAssignmentDto>> ReturnAssetAsync(Guid id)
         {

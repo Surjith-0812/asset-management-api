@@ -1,9 +1,8 @@
 ﻿using AssetManagement.Application.Interfaces.DTOs;
 using AssetManagement.Application.Interfaces.Services;
-using AssetManagement.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AssetManagement.Api
+namespace AssetManagement.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -5,6 +5,7 @@ using AssetManagement.Application.Services;
 using AssetManagement.Infrastructure.Persistence;
 using AssetManagement.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using AssetManagement.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +17,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddAutoMapper(typeof(AssetMappingProfile));
 builder.Services.AddAutoMapper(typeof(EmployeeMappingProfile));
 builder.Services.AddControllers();
+builder.Services.AddScoped<ExceptionHandlingMiddleware>();
 builder.Services.AddScoped<IAssetRepository, AssetRepository>();
 builder.Services.AddScoped<IAssetService, AssetService>();
-
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddScoped<IEmployeeService, EmployeeService>();
 
@@ -41,6 +42,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseExceptionHandlingMiddleware();
 
 app.UseHttpsRedirection();
 
